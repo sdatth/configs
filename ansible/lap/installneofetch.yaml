@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: updating local repo cache
+      shell: "apt update"
+    - name: install prerequisites
+      apt:
+        name:
+          - neofetch

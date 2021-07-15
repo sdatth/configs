@@ -1,0 +1,23 @@
+## core commands 
+# vagrant up                      - to power on the vm , it even creates the vm if not found
+# vagrant ssh                     - to ssh into the vm
+# vagrant halt                    - to power off the vm
+# vagrant reload                  - to reload the instance when there is a change in the configuration
+# vagrant global-status           - to check the status of all the powered off and currently running vm's
+# vagrant destroy                 - to destroy the vm 
+# vagrant destroy [id]            - to destroy the vm using id 
+# vagrant box update              - to update the box to the latest version
+# vagrant box list                - to see the locally available boxes 
+# vagrant box outdated --global   - to check for outdated box globally 
+# vagrant box prune --dry-run     - to check which boxes will be deleted when the command is run without the --dry-run flag
+# vagrant box prune               - to delete outdated boxes
+
+## snapshot commands
+# vagrant snapshot save [vm-name] snap-name      - to create a snapshot
+# vagrant snapshot restore [vm-name] snap-anme   - to restore a snapshot 
+# vagrant snapshot delete [vm-name] snap-name    - to delete a snapshot      
+# vagrant snapshot list                          - to see saved snapshots
+
+# for more help visit "https://www.vagrantup.com/docs/cli"
+
+

@@ -1,0 +1,18 @@
+# prerequisites (packages required)
+# - lolcat
+# - figlet
+# - fortune
+# - cowsay
+
+
+# display some text in a colourfull format on the terminal  {figlet - display text using special chars} {lolcat - display something colourful}   
+echo "Hello world" | figlet | lolcat
+
+# shows available formats to display some text (ex: cow, elephant)
+cowsay -l
+
+# display text using a one of the format from above command
+echo "Text here" | cowsay -f elephant
+
+# display random fortune phrases on every execution
+fortune | cowsay -f tux

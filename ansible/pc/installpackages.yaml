@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: make sure net-tools are installed on all nodes
+    apt:
+      name: net-tools
+      state: present

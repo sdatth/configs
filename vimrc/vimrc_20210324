@@ -1,0 +1,48 @@
+" dependencies
+" vim plug needs to be installed , follow this guide -> "https://github.com/junegunn/vim-plug" 
+" vim-gtk package needs to be installed to enable copy-paste functionality to sys clipboard
+
+" to set the editor to not to act like the old version of vi
+set nocompatible
+filetype off
+
+" this is the basic config file
+syntax enable
+set belloff=all
+set smartindent 
+set expandtab
+set number relativenumber
+set nowrap
+set smartcase
+set incsearch
+set mouse=a
+set showcmd
+
+" leader key
+let mapleader = "," 
+
+" this is the key binding section
+noremap <leader>c "+y
+noremap <leader>v "+p
+noremap <leader>x :q!<CR>
+noremap <leader>o :w<CR>
+noremap <leader>s :source%<CR>
+noremap <leader>; :Files~/<CR>
+noremap <leader>t :NERDTreeToggle<CR>
+vmap <leader>' gc
+
+" this is the plugin section
+call plug#begin('~/.vim/plugged')
+Plug 'sheerun/vim-polyglot'
+Plug 'jacoborus/tender.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+call plug#end()
+
+
+" colour scheme of the editor
+colorscheme tender
+

@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+ 
+  config.vm.box = "generic/ubuntu2004"
+  config.vm.define "dev-vm"
+
+config.vm.provider "libvirt" do |v|
+  v.memory = 2048
+  v.cpus = 1
+end
+
+end
