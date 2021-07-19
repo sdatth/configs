@@ -1,4 +1,5 @@
-" Vim config file
+" Vim config file 
+" config file location "~/.vimrc"
 " dependencies
 " vim plug needs to be installed , follow this guide -> "https://github.com/junegunn/vim-plug" 
 " vim-gtk package needs to be installed to enable copy-paste functionality to sys clipboard

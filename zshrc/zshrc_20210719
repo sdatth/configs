@@ -3,7 +3,8 @@
 #    zsh-syntax-highlighting  > syntax highlighting for ZSH in standard repos
 #    autojump                 > jump to directories with j or jc for child or jo to open in file manager
 #    zsh-autosuggestions      > Suggestions based on your history
-# ~/.zshrc file for zsh non-login shells.
+#
+# config file location "~/.zshrc"
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
 # to start tmux automatically when tmux launches
@@ -230,3 +231,7 @@ ex ()
   fi
 }
 
+# uncomment the below line to use starship prompt
+#eval "$(starship init zsh)"
+
+  
