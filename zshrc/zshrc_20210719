@@ -86,9 +86,9 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# theme ㉿ λ 💀
+# theme ㉿ λ 🐧  
 if [ "$color_prompt" = yes ]; then
-    PROMPT=$'%F{%(#.white.red)}┌──${debian_chroot:+($debian_chroot)──}(%B%F{%(#.red.white)}%n%(#.💀.(💀))%m%b%F{%(#.blue.red)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.red)}]\n└─%B%(#.%F{red}#.%F{white}$)%b%F{reset} '
+    PROMPT=$'%F{%(#.white.red)}${debian_chroot:+($debian_chroot)}❰%B%F{%(#.red.white)}%n%(#.💀.(💀))%m%b%F{%(#.blue.red)}❱-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.red)}]\n%B%(#.%F{red}#.%F{white}->)%b%F{reset} '
     RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{white}%B⚙%b%F{reset}.)'
 
 else
