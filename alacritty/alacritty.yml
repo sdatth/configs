@@ -1,0 +1,76 @@
+env:
+  TERM: xterm-256color
+
+shell:
+  program: /usr/bin/tmux
+
+background_opacity : 0.8
+draw_bold_text_with_bright_colors: true
+
+# Link to change color scceme -> https://github.com/alacritty/alacritty/wiki/Color-schemes
+# The 'Dark dimmed' colorscheme from Github.
+colors:
+  primary:
+    background: '#222D31'
+    foreground: '#d8d8d8'
+  normal:
+    black:   '#2d333b'
+    red:     '#f47067'
+    green:   '#a5ffe1'
+    yellow:  '#f69d50'
+    blue:    '#6cb6ff'
+    magenta: '#dcbdfb'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'
+  bright:
+    black:   '#768390'
+    red:     '#f47067'
+    green:   '#a5ffe1'
+    yellow:  '#f69d50'
+    blue:    '#6cb6ff'
+    magenta: '#dcbdfb'
+    cyan:    '#96d0ff'
+    white:   '#adbac7'
+
+scrolling:
+  history: 10000
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: false
+
+font:
+  size: 10.0
+
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+window:
+  padding:
+    x: 2
+    y: 2
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,         mods: Control|Shift, action: Paste                       }
+  - { key: C,         mods: Control|Shift, action: Copy                        }
+  - { key: Insert,    mods: Shift,         action: PasteSelection              }
+  - { key: Key0,      mods: Control,       action: ResetFontSize               }
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }
+  - { key: Paste,     mods: None,          action: Paste                       }
+  - { key: Copy,      mods: None,          action: Copy                        }
+  - { key: L,         mods: Control,       action: ClearLogNotice              }
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+  - { key: PageUp,    mods: Control,       action: ScrollPageUp,    mode: ~Alt }
+  - { key: PageDown,  mods: Shift,         action: ScrollPageDown              }
+  - { key: Home,      mods: Shift,         action: ScrollToTop                 }
+  - { key: End,       mods: Shift,         action: ScrollToBottom              }
+    
+
