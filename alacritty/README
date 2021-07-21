@@ -1,0 +1,10 @@
+Hack is one of the font family of nerd fonts
+when seting up a new machine copy the dir "Hack" to "~/.local/share/fonts/" location
+
+check proper font names to specify in alacritty
+# for fira code font
+fc-list | grep code 
+
+# for hack font 
+fc-list | grep hack
+
