@@ -1,8 +1,9 @@
-# ref links
+# firefox-config
 
-## - Basic configuration [https://www.youtube.com/watch?v=NH4DdXC0RFw]("https://www.youtube.com/watch?v=NH4DdXC0RFw")
-## - Advanced configuration [https://www.youtube.com/watch?v=uYoJ7U0OMCY]("https://www.youtube.com/watch?v=uYoJ7U0OMCY")
-## - Article [link here]("https://sunknudsen.com/privacy-guides/how-to-mitigate-fingerprinting-and-ip-leaks-using-firefox-advanced-preferences")
+## **_ref links_**
+### - Basic configuration [https://www.youtube.com/watch?v=NH4DdXC0RFw]("https://www.youtube.com/watch?v=NH4DdXC0RFw")
+### - Advanced configuration [https://www.youtube.com/watch?v=uYoJ7U0OMCY]("https://www.youtube.com/watch?v=uYoJ7U0OMCY")
+### - Article [link here]("https://sunknudsen.com/privacy-guides/how-to-mitigate-fingerprinting-and-ip-leaks-using-firefox-advanced-preferences")
 
 <br>
 
@@ -23,3 +24,5 @@ privacy.resistFingerprinting = true
 privacy.trackingprotection.enabled = true
 webgl.disabled =  true
 ```
+
+<br>

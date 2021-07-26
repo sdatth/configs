@@ -1,6 +1,6 @@
 # gpg
 
-### short notations
+## short notations
 ```
 # -a  --armor
 # -b  --detach-sign
@@ -31,12 +31,14 @@ gpg --list-sigs   # list signatures
 gpg --fingerprint # list fingerprints
 gpg --fingerprint --fingerprint
 ```
+
 <br> 
 
 ### editing keys
 ```
 gpg --edit-key <key-id>
 ```
+
 <br> 
 
 ### backup
@@ -44,12 +46,14 @@ gpg --edit-key <key-id>
 gpg --export-secret-keys --output private-key.asc --armor <key-id>
 gpg --export --armor --output some-public.key <key-id>
 ```
+
 <br> 
 
 ### importing
 ```
 gpg --import some.key
 ```
+
 <br> 
 
 ### encrypting & decrypting a file
@@ -67,6 +71,7 @@ gpg --output <file> --encrypt --armor --recipient <key-id> <file>
 # decrypting a file
 gpg -d <file> > file
 ```
+
 <br> 
 
 ### signing files
@@ -79,7 +84,8 @@ gpg -a -b <file>                  # short version
 gpg --verify <signed-file>
 gpg --verify <detached-signature-file> <corresponding-content-file>
 
-# normal sign (while performing normal sign, the file is embedded in the signature file) & data can be extracted using public keys by anyone
+# normal sign (the file is embedded in the signature file) 
+# data can be extracted using public keys by anyone
 gpg --armor --sign --recipient <key-id> <file>
 gpg -a -s <file>
 gpg --output <file> --armor --sign --recipient <key-id> <file>
@@ -87,8 +93,11 @@ gpg -o <file> -a -s -r <key-id> <file>
 
 # verifiying normal sign
 gpg --verify <signed-file> 
-gpg -d <signed-file> > file   # to extract file from a signature (only possible in normal sign)
+
+# to extract file from a signature (only possible in normal sign)
+gpg -d <signed-file> > file   
 ```
+
 <br> 
 
 ### misc 
@@ -100,3 +109,5 @@ gpg --delete-secret-keys <key ID>
 # signing others public key
 gpg --sign-key <key ID>
 ```
+
+<br>

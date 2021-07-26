@@ -1,30 +1,92 @@
 # Vagrant
 
-## **_core commands_** 
-```
-# vagrant up                      - to power on the vm , it even creates the vm if not found
-# vagrant ssh                     - to ssh into the vm
-# vagrant halt                    - to power off the vm
-# vagrant global-status           - to check the status of all the powered off and currently running vm's
-# vagrant destroy                 - to destroy the vm 
-# vagrant destroy [id]            - to destroy the vm using id 
-# vagrant reload                  - to reload the instance when there is a change in the configuration
-# vagrant box update              - to update the box to the latest version
-# vagrant box list                - to see the locally available boxes 
-# vagrant box outdated --global   - to check for outdated box globally 
-# vagrant box prune --dry-run     - to check which boxes will be deleted when the command is run without the --dry-run flag
-# vagrant box prune               - to delete outdated boxes
-
-## snapshot commands
-# vagrant snapshot save [vm-name] snap-name      - to create a snapshot
-# vagrant snapshot restore [vm-name] snap-anme   - to restore a snapshot 
-# vagrant snapshot delete [vm-name] snap-name    - to delete a snapshot      
-# vagrant snapshot list                          - to see saved snapshots
-
-# for more help visit "https://www.vagrantup.com/docs/cli"
-```
+### for more help visit [https://www.vagrantup.com/docs/cli]("https://www.vagrantup.com/docs/cli")
 
 <br>
+
+## **_core commands_** 
+
+### power on the vm , it even creates the vm if not found
+```vagrant up```   
+
+<br>
+
+### ssh into the vm                   
+```vagrant ssh```  
+
+<br>
+
+### power off the vm                   
+```vagrant halt```
+
+<br>
+
+### check the status of all the powered off and currently running vm's
+```vagrant global-status```           
+
+<br>
+
+### destroy the vm 
+```vagrant destroy```     
+
+<br>
+
+### destroy the vm using id 
+```vagrant destroy [id]```       
+
+<br>
+
+### reload the instance when there is a change in the configuration
+```vagrant reload``` 
+
+<br>
+
+### update the box to the latest version
+```vagrant box update``` 
+
+<br>
+
+### see the locally available boxes 
+```vagrant box list```                
+
+<br>
+
+### check for outdated box globally 
+```vagrant box outdated --global```   
+
+<br>
+
+### check which boxes will be deleted when prune is run
+```vagrant box prune --dry-run```    
+
+<br>
+
+### delete outdated boxes
+```vagrant box prune```               
+
+<br>
+
+## **_snapshot commands_**
+### to create a snapshot
+```vagrant snapshot save [vm-name] snap-name```  
+
+<br>
+
+### restore a snapshot 
+```vagrant snapshot restore [vm-name] snap-anme``` 
+
+<br>
+
+### delete a snapshot
+```vagrant snapshot delete [vm-name] snap-name```   
+
+<br>
+
+### see saved snapshots
+```vagrant snapshot list```                          
+
+<br>
+
 
 ## **_configuration_**
 
@@ -64,3 +126,5 @@ Vagrant.configure("2") do |config|
   
 end
 ```
+
+<br>

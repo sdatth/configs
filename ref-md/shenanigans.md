@@ -1,6 +1,6 @@
 # shenanigans
 
-### prerequisites (packages required)
+## prerequisites (packages required)
 ### - lolcat (display something colourful)
 ### - figlet (display text using special chars)
 ### - fortune (tells fortune)
@@ -26,3 +26,5 @@
 
 ### display random fortune phrases on every execution
 ```fortune | cowsay -f tux```
+
+<br>

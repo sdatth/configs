@@ -1,5 +1,6 @@
 # tmux
 
+## **_commands_**
 ### list current tmux session
 ```tmux ls```
 
@@ -27,3 +28,5 @@
 
 ### kill a session
 ```tmux kill-session -t <session-number>```
+
+<br>

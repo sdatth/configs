@@ -1,6 +1,6 @@
 # !/bin/bash/
 
-## syntax rules
+### syntax rules
 1. when defining a variable whitespaces must be eliminated
 2. include the shell in all the scripts at the beginning of the file (#!/bin/bash)
 
@@ -168,3 +168,5 @@ case $age in
 esac
 
 ```
+
+<br>
