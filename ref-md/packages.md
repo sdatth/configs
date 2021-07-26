@@ -1,4 +1,5 @@
-# this is a list of all the additional packages used in the linux machine
+# packages
+## this is a list of all the additional packages used in the linux machine
 
 1. exiftool
 2. macchanger
