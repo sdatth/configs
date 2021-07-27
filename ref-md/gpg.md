@@ -57,7 +57,7 @@ gpg --import some.key
 <br> 
 
 ### encrypting & decrypting a file
-```
+```bash
 # short version
 gpg -e -r <key-id> <file>
 gpg -e -a -r <key-id> <file>  # for armor version
@@ -75,7 +75,7 @@ gpg -d <file> > file
 <br> 
 
 ### signing files
-```
+```bash
 # detach sign
 gpg --armor --detach-sign <file>  # long version
 gpg -a -b <file>                  # short version
@@ -101,7 +101,7 @@ gpg -d <signed-file> > file
 <br> 
 
 ### misc 
-```
+```bash
 # deleting
 gpg --delete-keys <key ID>
 gpg --delete-secret-keys <key ID>

@@ -22,7 +22,7 @@
 <br>
 
 ## **_configuration_**
-```
+```bash
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)

@@ -11,7 +11,7 @@
 
 <br>
 
-```
+```bash
 # echo 
 read -p "Enter your name " name
 echo "hello world $name"
