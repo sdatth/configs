@@ -1,11 +1,16 @@
-# prerequisites (packages required)
-# - lolcat
-# - figlet
-# - fortune
-# - cowsay
+# shenanigans
 
+## prerequisites (packages required)
+### - lolcat (display something colourful)
+### - figlet (display text using special chars)
+### - fortune (tells fortune)
+### - cowsay (displays text inside an object)
 
-# display some text in a colourfull format on the terminal  {figlet - display text using special chars} {lolcat - display something colourful}   
+<br>
+
+## **_commands_**
+```bash
+# ASCII display  
 echo "Hello world" | figlet | lolcat
 
 # shows available formats to display some text (ex: cow, elephant)
@@ -16,3 +21,6 @@ echo "Text here" | cowsay -f elephant
 
 # display random fortune phrases on every execution
 fortune | cowsay -f tux
+```
+
+<br>

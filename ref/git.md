@@ -1,4 +1,7 @@
-## basic commands
+# git
+
+## **_commands_**
+```bash
 # set basic attributes
 git config --global user.name "Your Name"
 git config --global user.email "youremail@yourdomain.com"
@@ -7,9 +10,9 @@ git config --global user.email "youremail@yourdomain.com"
 git add <filename>
 git add .                # to add all changes to the staging area
 
-# commit changes to the repo
+# commit changes to the repo (-S used to sign a commit using GPG key)
 git commit -m "Message"
-git commit -S -m "Signed commit"    # -S flag is used to sign a commit using GPG key
+git commit -S -m "Signed commit"   
 
 # to push chamges to remote server
 git push
@@ -20,7 +23,7 @@ git pull
 # to fetch a repo
 git clone git@github.com:user/my-project.git
 
-## add multiple origins
+# add multiple origins
 git remote add github git@github.com:user/my-project.git
 git remote add gitlab git@gitlab.com:user/my-project.git
 
@@ -33,3 +36,6 @@ git status
 
 # shows details of all commits
 git log
+```
+
+<br>

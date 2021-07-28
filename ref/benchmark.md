@@ -8,8 +8,9 @@
 <br>
 
 ##  **_commands_**
-```phoronix-test-suite install john-the-ripper```
-
-```phoronix-test-suite run john-the-ripper```
+```bash
+phoronix-test-suite install john-the-ripper
+phoronix-test-suite run john-the-ripper
+```
 
 <br>

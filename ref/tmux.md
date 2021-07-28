@@ -1,5 +1,7 @@
-# this is a ref file for tmux 
+# tmux
 
+## **_commands_**
+```bash
 # list current tmux session
 tmux ls
 
@@ -17,3 +19,6 @@ tmux attach-session -t <session-number>
 
 # kill a session
 tmux kill-session -t <session-number>
+```
+
+<br>

@@ -1,3 +1,6 @@
+# scp
+## **_commands_**
+```bash
 # transferring single file from local to remote host
 scp /home/stacy/images/image*.jpg stacy@myhost.com:/home/stacy/archive
 
@@ -12,3 +15,6 @@ scp -r jeff@myhost.com:/home/jeff/documents /home/jeff/downloads/documents
 
 # transferring from one remote to other remote host
 scp jeff@firsthost.com:/files/file1.zip brad@secondhost.com:/archives
+```
+
+<br>

@@ -1,7 +1,12 @@
-# /etc/crontab: system-wide crontab
-# NOTE : use absolute paths of executables when using a command
+# crontab
 
-## commands
+### - /etc/crontab: system-wide crontab
+### - NOTE : use absolute paths of executables when using a command
+
+<br>
+
+## **_commands_**
+```bash
 # lists all crontab for the current user
 crontab -l
 
@@ -11,7 +16,7 @@ crontab -e
 # edits the crontab file of root (-u flag is to specify user)
 sudo crontab -u root -e
 
-
+## configuration
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)
@@ -32,3 +37,6 @@ sudo crontab -u root -e
 
 # runs the job hourly
 @hourly              /usr/bin/bash echo "This is an hourly cronjob" > /home/anony/Downloads/testfile.txt
+```
+
+<br>
