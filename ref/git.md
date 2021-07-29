@@ -14,13 +14,17 @@ git add .                # to add all changes to the staging area
 git commit -m "Message"
 git commit -S -m "Signed commit"   
 
-# to push chamges to remote server
+#  push chamges to remote server
 git push
 
-# to pull change
+#  pull change
 git pull
 
-# to fetch a repo
+# restore a file last commit state
+git restore .
+git restore [file]
+
+# fetch a repo
 git clone git@github.com:user/my-project.git
 
 # add multiple origins

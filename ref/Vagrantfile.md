@@ -33,6 +33,10 @@ vagrant box update
 # see the locally available boxes 
 vagrant box list                
 
+# remove box
+vagrant box remove [box-name] --provider [provider]
+vagrant box remove generic/centos8 --provider libvirt  #example
+
 # check for outdated box globally 
 vagrant box outdated --global   
 

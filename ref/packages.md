@@ -14,7 +14,13 @@
 11. tmux
 12. joplin
 13. mailspring
-14. glow (markdown renderer)
+14. glow (https://github.com/charmbracelet/glow)
+15. bat (https://github.com/sharkdp/bat)
+16. fd (https://github.com/sharkdp/fd)
+17. exa (https://github.com/ogham/exa)
+18. procs (https://github.com/dalance/procs)
+19. broot (https://github.com/Canop/broot)
+20. fzf (https://github.com/junegunn/fzf)
 
 <br>
 
