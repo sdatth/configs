@@ -35,6 +35,9 @@ git remote add gitlab git@gitlab.com:user/my-project.git
 git push -u gitlab main
 git push -u github main
 
+# pull using specific remote
+git pull gitlab main
+
 # shows untracked files
 git status
 
