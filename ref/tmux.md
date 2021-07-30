@@ -8,17 +8,21 @@ tmux ls
 # detach a tmux session
 ctrl+b and d
 
+# attach to an existing session
+tmux attach-session -t <session-number>
+
+# kill a session
+tmux kill-session -t <session-number>
+
 # open a new window
 ctrl+b and c
 
 # open a new tab in the same window
 ctrl+b and %
 
-# attach to an existing session
-tmux attach-session -t <session-number>
+# open a new tab horizontally
+ctrl+b and "
 
-# kill a session
-tmux kill-session -t <session-number>
 ```
 
 <br>
