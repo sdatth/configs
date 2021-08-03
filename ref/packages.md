@@ -22,6 +22,7 @@
 18. ecryptfs
 19. tomb (https://github.com/dyne/Tomb)
 20. steghide
+21. stow
 
 ### GUI tools
 1. gvim
