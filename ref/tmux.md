@@ -14,6 +14,9 @@ tmux attach-session -t <session-number>
 # kill a session
 tmux kill-session -t <session-number>
 
+# rename session
+tmux rename-session -t <session-number> <new-name>
+
 # open a new window
 ctrl+b and c
 
