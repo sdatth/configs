@@ -1,0 +1,29 @@
+"path" : "~/.config/code/User/settings.json",
+
+
+
+{
+    "code-runner.runInTerminal": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "python.pythonPath": "/bin/python3",
+    "terminal.external.linuxExec": "alacritty",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [",","o"],
+            "commands": [":w"]
+        },
+
+        {
+            "before": [",","x"],
+            "commands": [":q!"]
+        }
+    ]
+}
+

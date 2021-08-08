@@ -23,6 +23,9 @@
 19. tomb (https://github.com/dyne/Tomb)
 20. steghide
 21. stow
+22. make
+23. build-essential
+24. zathura (pdf reader)
 
 ### GUI tools
 1. gvim
@@ -30,6 +33,10 @@
 3. GSConnect (gnome extension)
 4. joplin
 5. mailspring
+6. sublime-text
+7. sublime-merge
+8. vscode
+9. keepassxc
 
 
 <br>

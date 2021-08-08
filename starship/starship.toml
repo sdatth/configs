@@ -1,4 +1,6 @@
 # config location "~/.config/starship.toml"
+# more info on documentation link "https://starship.rs/config/"
+
 # Inserts a blank line between shell prompts
 add_newline = true
 
@@ -8,14 +10,19 @@ disabled = true
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❱](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+success_symbol = "[❱](bold red)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 # Disable the package module, hiding it from the prompt completely
-[time]
-disabled = true
-
 [aws]
 disabled = true
+
+[vagrant]
+format = "via [ﰨ $version](bold green) "
+
+#[directory]
+# truncation_length = 8
+# truncation_symbol = "…/"
+#format = "[$path ﱮ]($style)[$read_only]($read_only_style) "
 
 # Please follow the steps for your shell to complete the installation:
 

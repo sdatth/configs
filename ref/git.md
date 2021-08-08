@@ -3,8 +3,10 @@
 ## **_commands_**
 ```bash
 # set basic attributes
+# remove the --global flag to set the attributes to the local repo
 git config --global user.name "Your Name"
 git config --global user.email "youremail@yourdomain.com"
+git config --global user.signingkey "youremail@domain.com"          # email of the gpg key
 
 # add changes to the staging area
 git add <filename>
@@ -22,7 +24,7 @@ git pull
 git push -u gitlab main
 git pull gitlab main
 
-# restore a file last commit state
+# restore a file from last commit state
 git restore .
 git restore [file]
 
@@ -32,6 +34,7 @@ git clone git@github.com:user/my-project.git
 # add multiple origins
 git remote add github git@github.com:user/my-project.git
 git remote add gitlab git@gitlab.com:user/my-project.git
+git remote -v # view all remotes
 
 # shows untracked files
 git status
@@ -59,6 +62,9 @@ git checkout -b <branch-name>         # creating & checking out new branch with 
 
 # show differences of old & new version of file
 git diff
+
+# merge (must be done on master branch)
+git merge <feature-branch-name>
 
 ```
 
@@ -129,7 +135,7 @@ cat <pack-file> | git unpack-objects
 
      '-' denotes line is deleted
      '+' denotes line is added
-END_COMMENT     
+END_COMMENT
 ```
 
 <br>
