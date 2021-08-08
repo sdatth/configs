@@ -1,4 +1,11 @@
-# makefile to hardlink conf files
+#  	 __  __       _         __ _ _
+#	|  \/  | __ _| | _____ / _(_) | ___
+#	| |\/| |/ _` | |/ / _ \ |_| | |/ _ \
+#	| |  | | (_| |   <  __/  _| | |  __/
+#	|_|  |_|\__,_|_|\_\___|_| |_|_|\___|
+#
+# source - https://github.com/sdatth/dotfiles
+# makefile to copy conf files from dotfiles repo
 
 all:
 	cp $(HOME)/dotfiles/Makefile $(HOME)/Stuff/files/configs/shell-scripts/Makefile 

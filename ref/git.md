@@ -21,6 +21,7 @@ git push
 git pull
 
 # use specific remote to push or pull from
+git [push|pull] [remote] [branch]
 git push -u gitlab main
 git pull gitlab main
 
@@ -32,9 +33,10 @@ git restore [file]
 git clone git@github.com:user/my-project.git
 
 # add multiple origins
-git remote add github git@github.com:user/my-project.git
-git remote add gitlab git@gitlab.com:user/my-project.git
-git remote -v # view all remotes
+git remote add [remote-name] git@[remote-url]:user/my-project.git
+git remote add github git@github.com:user/my-project.git          # example
+git remote -v                                                     # view all remotes
+git remote show [remote-name]                                     # shows detailed info
 
 # shows untracked files
 git status
@@ -47,24 +49,36 @@ git log
 git reset --hard <commit hash>
 
 # remove files from staging area back to untracted stage
-git rm --cached <filename>
+git restore --staged <file>
 
 # checkout a branch or commit
 git checkout [branch|commit-hash]
 
 # branches
 git branch                            # lists all local brnaches
+git branch -a                         # list remote branches too
+git branch -vv                        # lists tracking branches 
+git remote show [remote-name]         # shows detailed info
 git branch <branch-name>              # creates new branch  
-git checkout <branch-name>            # checkout specific branch
-git branch -d <branch-name>           # delete a branch
-git branch -m <old-name> <new-name>   # rename a branch
+git checkout <branch-name>            # checkout specific branch (works even if it is on a remote repo)
 git checkout -b <branch-name>         # creating & checking out new branch with 1 command
+git branch -d <branch-name>           # delete a branch
+git branch -D <branch-name>           # delete a branch forcefully 
+git push [remote] -d [branch]   # delete remote branch
+git branch -m <old-name> <new-name>   # rename a branch
+git remote update [remote] --prune    # local update of deleted branches in remote repo
 
 # show differences of old & new version of file
 git diff
 
-# merge (must be done on master branch)
+# merge (must be done on the branch to merge with, usually on the master branch)
 git merge <feature-branch-name>
+
+# make the repo a regular folder
+rm -rf .git
+
+# show refs
+git show-ref
 
 ```
 
