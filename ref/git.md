@@ -25,11 +25,7 @@ git [push|pull] [remote] [branch]
 git push -u gitlab main
 git pull gitlab main
 
-# restore a file from last commit state
-git restore .
-git restore [file]
-
-# fetch a repo
+# clone a repo
 git clone git@github.com:user/my-project.git
 
 # add multiple origins
@@ -40,19 +36,39 @@ git remote show [remote-name]                                     # shows detail
 
 # shows untracked files
 git status
-git status -s       #short version 
+git status -s       # short version 
 
 # shows details of all commits
 git log
 
-# reset working dir files to a sepcific commit [be cautious!]
-git reset --hard <commit hash>
+: << 'Example'
+# this is output of git log --oneline
 
-# remove files from staging area back to untracted stage
-git restore --staged <file>
+300043d (HEAD -> master) c4  -> master                              
+daa1140 c3                   -> master~1                                                                  │ 28 # use specific remote to push or pull from
+1837ba1 c2                   -> master~2                                                                  │ 27 git [push|pull] [remote] [branch]
+54c8ffc c1                   -> master~3
+Example
+
+# reset
+git reset <commit>             # commit to reset to 
+git reset master~1             # example
+git reset HEAD~2               # example
+git reset --hard <commit>      # reset working dir files to a sepcific commit !cautious!
+git reset <file>               # remove files from staging area back to untracted stage
+
+# restore ( restore file from a commit )
+git restore <file>                # restore a file from current commit
+git restore -s <commit> <file>    # restore a file from a particular commit
+git restore -s <commit> .         # restore everything from a particular commit
+git restore --staged <file>       # restore a file to staging area 
+
+# revert 
+git revert <commit>
 
 # checkout a branch or commit
-git checkout [branch|commit-hash]
+git checkout [branch|commit]      # Switch between branches or inspect old snapshots
+git checkout <commit> -- <file>   # restore changes of a file in the working directory
 
 # branches
 git branch                            # lists all local brnaches
@@ -64,15 +80,33 @@ git checkout <branch-name>            # checkout specific branch (works even if 
 git checkout -b <branch-name>         # creating & checking out new branch with 1 command
 git branch -d <branch-name>           # delete a branch
 git branch -D <branch-name>           # delete a branch forcefully 
-git push [remote] -d [branch]   # delete remote branch
+git push [remote] -d [branch]         # delete remote branch
 git branch -m <old-name> <new-name>   # rename a branch
 git remote update [remote] --prune    # local update of deleted branches in remote repo
+
+# stash (git stash temporarily delete changes made to your working copy so you can work on something else
+# and then come back and re-apply them later on.)
+git stash list               # list available stash
+git stash                    # save current changes in working dir in a stash cache
+git stash pop                # apply the stash and delete from cache
+git stash pop <index>        # using index to specify the stash
+git stash apply              # apply the stash and keep it in the cache too
+git stash apply <index>      # using index to specify the stash
+git stash push -m "message"  # use a message to identify uniquely
+git stash drop <index>       # delete a particular stash
+git stash clear              # delet all stashes
 
 # show differences of old & new version of file
 git diff
 
 # merge (must be done on the branch to merge with, usually on the master branch)
-git merge <feature-branch-name>
+git merge <branch-name>
+
+# rebase 
+git rebase <branch-name>
+
+# tag a commit
+git tag <tag-name>
 
 # make the repo a regular folder
 rm -rf .git
