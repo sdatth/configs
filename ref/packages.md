@@ -26,6 +26,8 @@
 22. make
 23. build-essential
 24. zathura (pdf reader)
+25. pass
+26. fm6000 (https://github.com/anhsirk0/fetch-master-6000)
 
 ### GUI tools
 1. gvim
@@ -37,6 +39,7 @@
 7. sublime-merge
 8. vscode
 9. keepassxc
+10. copyq
 
 
 <br>

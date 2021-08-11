@@ -16,14 +16,14 @@ ALACRITTY_PKGS = cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfi
 MORE_PKGS = wormhole
 
 .ONESHELL:
-all: dep bindir pipinstall fzf bat glow exa fd nerdfonts starship utubedl symlink clean note ## Symlink config files
-
-copy: dep bindir pipinstall fzf bat glow exa fd nerdfonts starship utubedl cpconf clean note ## Copy config files
-
 help: ## Show available options
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 	| sort \
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+install: dep bindir pipinstall fzf bat glow exa fd nerdfonts starship utubedl symlink clean note ## Symlink config files
+
+copy: dep bindir pipinstall fzf bat glow exa fd nerdfonts starship utubedl cpconf clean note ## Copy config files
 
 dep: ## Install dependencies
 	@echo
@@ -66,6 +66,7 @@ delete: ## Delete old config files
 		[ -f "$(HOME)/.config/starship.toml" ] && rm $(HOME)/.config/starship.toml
 		[ -d "$(HOME)/.local/share/nvim/site/autoload" ] && rm -rf $(HOME)/.local/share/nvim/site/autoload
 		[ -d "$(HOME)/.vim/autoload" ] && rm -rf "$(HOME)/.vim/autoload"
+		[ -d "$(HOME)/.zsh_functions" ] && rm -rf "$(HOME)/.zsh_functions"
 		echo done!
 	elif [ $$choice == "n" ]; then
 		echo "Sorry to let u go!"
@@ -144,7 +145,9 @@ nerdfonts: ## Install nerd fonts
 	@echo
 	echo "nerd fonts" | cowsay | lolcat
 	mkdir -p $(HOME)/.local/share/fonts/firacode
-	cp $(HOME)/dotfiles/fonts/* $(HOME)/.local/share/fonts/firacode/ 
+	mkdir -p $(HOME)/.local/share/fonts/hack
+	cp $(HOME)/dotfiles/fonts/firacode/* $(HOME)/.local/share/fonts/firacode/ 
+	cp $(HOME)/dotfiles/fonts/hack/* $(HOME)/.local/share/fonts/hack/ 
 	echo done!
 
 starship: ## Install starship prompt
@@ -171,7 +174,7 @@ symlink: delete vimplug nvimplug
 	mv configurations/.wo-vimrc configurations/.vimrc
 	rm configurations/.config/nvim/init.vim 
 	mv configurations/.config/nvim/wo-init.vim configurations/.config/nvim/init.vim
-	stow configurations/
+	stow -vt $(HOME) configurations/
 	echo done!
 
 cpconf: delete vimplug nvimplug 
@@ -189,6 +192,7 @@ cpconf: delete vimplug nvimplug
 	cp configurations/.zshrc $(HOME)/
 	cp configurations/.bashrc $(HOME)/
 	cp -r configurations/.config/alacritty/ $(HOME)/.config/
+	cp -r configurations/.config/fm6000 $(HOME)/.config/
 
 alacritty: ## Compile and install alacritty
 	@echo
@@ -215,6 +219,18 @@ alacritty: ## Compile and install alacritty
 	else
 		echo "Not installing alacritty "
 	fi
+
+update:
+	# fzf
+	cd $(HOME)/.fzf && git pull && ./install
+	
+	# starship
+	sh -c "$$(curl -fsSL https://starship.rs/install.sh)"
+
+pull: ## Pull latest changes of git repo
+	@echo
+	cd $(HOME)/dotfiles
+	git pull
 
 clean: ## Clean up junk files after installation
 	@echo

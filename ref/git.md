@@ -108,6 +108,12 @@ git rebase <branch-name>
 # tag a commit
 git tag <tag-name>
 
+# worktree
+git worktree add <path> <branch>         # create worktree of existing branch
+git worktree add -b <new-branch> <path>  # create worktree by creating new branch
+git worktree list                        # list worktrees
+git worktree remove <branch>             # remove a worktree
+
 # make the repo a regular folder
 rm -rf .git
 

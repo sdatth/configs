@@ -18,6 +18,7 @@ all:
 	cp $(HOME)/dotfiles/configurations/.config/nvim/init.vim $(HOME)/Stuff/files/configs/nvimrc/nvimrc
 	cp $(HOME)/dotfiles/configurations/.bashrc $(HOME)/Stuff/files/configs/bashrc/bashrc
 	cp $(HOME)/dotfiles/configurations/.config/alacritty/alacritty.yml $(HOME)/Stuff/files/configs/alacritty/alacritty.yml
+	cp $(HOME)/.config/Code/User/settings.json $(HOME)/Stuff/files/configs/vscode/settings.json
 
 delete:
 	rm $(HOME)/Stuff/files/configs/shell-scripts/Makefile
