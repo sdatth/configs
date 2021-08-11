@@ -87,7 +87,7 @@ git remote update [remote] --prune    # local update of deleted branches in remo
 # stash (git stash temporarily delete changes made to your working copy so you can work on something else
 # and then come back and re-apply them later on.)
 git stash list               # list available stash
-git stash                    # save current changes in working dir in a stash cache
+git stash -u                 # save current changes in working dir in a stash cache
 git stash pop                # apply the stash and delete from cache
 git stash pop <index>        # using index to specify the stash
 git stash apply              # apply the stash and keep it in the cache too
@@ -113,6 +113,10 @@ rm -rf .git
 
 # show refs
 git show-ref
+
+# garbage collector
+git gc
+git prune
 
 ```
 
