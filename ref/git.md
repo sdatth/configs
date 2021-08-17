@@ -45,8 +45,8 @@ git log
 # this is output of git log --oneline
 
 300043d (HEAD -> master) c4  -> master                              
-daa1140 c3                   -> master~1                                                                  │ 28 # use specific remote to push or pull from
-1837ba1 c2                   -> master~2                                                                  │ 27 git [push|pull] [remote] [branch]
+daa1140 c3                   -> master~1                                                                 
+1837ba1 c2                   -> master~2                                                                 
 54c8ffc c1                   -> master~3
 Example
 

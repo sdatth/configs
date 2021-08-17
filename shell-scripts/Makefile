@@ -11,7 +11,7 @@ SHELL = /bin/bash
 PIP_PKGS = bpytop
 CONF_PKGS = neovim vim vim-gtk3 curl git ranger zsh zsh-syntax-highlighting autojump
 CONF_PKGS += zsh-autosuggestions tmux fd-find stow ncdu compton unzip build-essential
-CONF_PKGS += lolcat figlet fortune cowsay python python3-testresources
+CONF_PKGS += lolcat figlet fortune cowsay python python3-testresources fish
 ALACRITTY_PKGS = cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 MORE_PKGS = wormhole
 
@@ -42,7 +42,7 @@ pipinstall: # Install pip and its packages
 	@echo
 	export PATH=$$PATH:$$HOME/.local/bin
 	echo "Installing pip and its packages" | cowsay | lolcat
-	cd $(HOME)/Downloads
+	cd $(HOME)/temp
 	curl "https://bootstrap.pypa.io/get-pip.py" -o "install-pip3.py"
 	python3 install-pip3.py
 	pip install --user --upgrade pip
@@ -50,7 +50,9 @@ pipinstall: # Install pip and its packages
 
 bindir: ## Create ~/.local/bin dir
 	- [ ! -d "$(HOME)/.local/bin" ] && mkdir -p $(HOME)/.local/bin
-	- [ ! -d "$(HOME)/Downloads" ] && mkdir -p $(HOME)/Downloads
+	- [ ! -d "$(HOME)/temp" ] && mkdir -p $(HOME)/temp
+	echo "PATH=$$PATH:$$HOME/.local/bin" > $(HOME)/temp/pathfile
+	sudo cp $(HOME)/temp/pathfile /etc/environment
 
 delete: ## Delete old config files
 	@echo
@@ -62,11 +64,13 @@ delete: ## Delete old config files
 		[ -d "$(HOME)/.config/ranger" ] && rm -rf $(HOME)/.config/ranger
 		[ -f "$(HOME)/.vimrc" ] && rm $(HOME)/.vimrc
 		[ -f "$(HOME)/.zshrc" ] && rm $(HOME)/.zshrc
+		[ -f "$(HOME)/.bashrc" ] && rm $(HOME)/.bashrc
 		[ -f "$(HOME)/.Xresources" ] && rm $(HOME)/.Xresources
 		[ -f "$(HOME)/.config/starship.toml" ] && rm $(HOME)/.config/starship.toml
 		[ -d "$(HOME)/.local/share/nvim/site/autoload" ] && rm -rf $(HOME)/.local/share/nvim/site/autoload
-		[ -d "$(HOME)/.vim/autoload" ] && rm -rf "$(HOME)/.vim/autoload"
+		[ -d "$(HOME)/.vim" ] && rm -rf "$(HOME)/.vim"
 		[ -d "$(HOME)/.zsh_functions" ] && rm -rf "$(HOME)/.zsh_functions"
+		[ -d "$(HOME)/.config/fish" ] && rm -rf "$(HOME)/.config/fish"
 		echo done!
 	elif [ $$choice == "n" ]; then
 		echo "Sorry to let u go!"
@@ -88,6 +92,7 @@ nvimplug: ## Install plug for neovim
 		sh -c 'curl -fLo $(HOME)/.local/share/nvim/site/autoload/plug.vim --create-dirs \
        	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 	fi
+	mkdir -p ~/.config/nvim/plugged
 	echo done!
 
 vimplug: ## Install plug for vim
@@ -99,6 +104,7 @@ vimplug: ## Install plug for vim
 	else
 		curl -fLo $(HOME)/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
+	mkdir -p ~/.vim/plugged
 	echo done!
 
 fzf: ## Install fzf
@@ -111,23 +117,23 @@ fzf: ## Install fzf
 bat: ## Install bat
 	@echo 
 	echo "installing bat" | cowsay | lolcat
-	wget -P $(HOME)/Downloads/ https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
-	sudo dpkg -i $(HOME)/Downloads/bat_0.18.2_amd64.deb
+	wget -P $(HOME)/temp/ https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
+	sudo dpkg -i $(HOME)/temp/bat_0.18.2_amd64.deb
 	echo done!
 
 glow: ## Install glow
 	@echo 
 	echo "installing glow" | cowsay | lolcat
-	wget -P $(HOME)/Downloads/ https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_amd64.deb
-	sudo dpkg -i $(HOME)/Downloads/glow_1.4.1_linux_amd64.deb
+	wget -P $(HOME)/temp/ https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_amd64.deb
+	sudo dpkg -i $(HOME)/temp/glow_1.4.1_linux_amd64.deb
 	echo done!
 
 exa: ## Install exa
 	@echo
 	echo "installing exa" | cowsay | lolcat
-	cd $(HOME)/Downloads
+	cd $(HOME)/temp
 	mkdir exa
-	wget -P $(HOME)/Downloads/exa https://github.com/ogham/exa/releases/download/v0.10.0/exa-linux-x86_64-v0.10.0.zip
+	wget -P $(HOME)/temp/exa https://github.com/ogham/exa/releases/download/v0.10.0/exa-linux-x86_64-v0.10.0.zip
 	cd exa
 	unzip exa-linux-x86_64-v0.10.0.zip
 	cp bin/exa $(HOME)/.local/bin/
@@ -136,8 +142,8 @@ exa: ## Install exa
 fd: ## Install fd
 	@echo
 	echo "installing fd" | cowsay | lolcat
-	#wget -P ~/Downloads/ https://github.com/sharkdp/fd/releases/download/v8.2.1/fd_8.2.1_amd64.deb
-	#sudo dpkg -i ~/Downloads/fd_8.2.1_amd64.deb
+	#wget -P ~/temp/ https://github.com/sharkdp/fd/releases/download/v8.2.1/fd_8.2.1_amd64.deb
+	#sudo dpkg -i ~/temp/fd_8.2.1_amd64.deb
 	ln -s $$(which fdfind) $(HOME)/.local/bin/fd
 	echo done!
 
@@ -153,9 +159,7 @@ nerdfonts: ## Install nerd fonts
 starship: ## Install starship prompt
 	@echo 
 	echo "installing starship" | cowsay | lolcat
-	curl -fsSL https://starship.rs/install.sh > $(HOME)/Downloads/starship.sh
-	chmod +x $(HOME)/Downloads/starship.sh
-	sh -c $(HOME)/Downloads/starship.sh
+	sh -c "$$(curl -fsSL https://starship.rs/install.sh)"
 	echo done!
 
 utubedl: ## Install youtube-dl
@@ -167,13 +171,11 @@ utubedl: ## Install youtube-dl
 symlink: delete vimplug nvimplug
 	@echo 
 	echo "Symlinking configuration files " | cowsay | lolcat
-	rm $(HOME)/.zshrc
 	cd $(HOME)/dotfiles/
-	rm $(HOME)/.bashrc
 	rm configurations/.vimrc
-	mv configurations/.wo-vimrc configurations/.vimrc
 	rm configurations/.config/nvim/init.vim 
-	mv configurations/.config/nvim/wo-init.vim configurations/.config/nvim/init.vim
+	mv extra/.wo-vimrc configurations/.vimrc
+	mv extra/.wo-init.vim configurations/.config/nvim/init.vim
 	stow -vt $(HOME) configurations/
 	echo done!
 
@@ -181,11 +183,8 @@ cpconf: delete vimplug nvimplug
 	@echo
 	echo "Copying files"
 	cd $(HOME)/dotfiles/
-	rm $(HOME)/.bashrc
-	mkdir -p ~/.vim/plugged
-	cp configurations/.wo-vimrc $(HOME)/.vimrc
-	mkdir -p ~/.config/nvim/plugged
-	cp configurations/.config/nvim/wo-init.vim $(HOME)/.config/nvim/init.vim
+	cp extra/.wo-vimrc $(HOME)/.vimrc
+	cp extra/.wo-init.vim $(HOME)/.config/nvim/init.vim
 	cp configurations/.config/starship.toml $(HOME)/.config/starship.toml
 	cp -r configurations/.config/ranger $(HOME)/.config/
 	cp configurations/.Xresources $(HOME)/
@@ -193,6 +192,7 @@ cpconf: delete vimplug nvimplug
 	cp configurations/.bashrc $(HOME)/
 	cp -r configurations/.config/alacritty/ $(HOME)/.config/
 	cp -r configurations/.config/fm6000 $(HOME)/.config/
+	cp -r configurations/.config/fish $(HOME)/.config/
 
 alacritty: ## Compile and install alacritty
 	@echo
@@ -205,9 +205,9 @@ alacritty: ## Compile and install alacritty
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 		source $(HOME)/.bashrc
 		source $(HOME)/.cargo/env
-		mkdir -p $(HOME)/Downloads/alacritty
-		git clone https://github.com/alacritty/alacritty.git $(HOME)/Downloads/alacritty
-		cd $(HOME)/Downloads/alacritty/
+		mkdir -p $(HOME)/temp/alacritty
+		git clone https://github.com/alacritty/alacritty.git $(HOME)/temp/alacritty
+		cd $(HOME)/temp/alacritty/
 		rustup override set stable
 		rustup update stable
 		export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
@@ -235,7 +235,7 @@ pull: ## Pull latest changes of git repo
 clean: ## Clean up junk files after installation
 	@echo
 	echo "cleaning up!" | cowsay | lolcat
-	rm -rf $(HOME)/Downloads/*
+	rm -rf $(HOME)/temp/*
 	echo done!
 	
 note:

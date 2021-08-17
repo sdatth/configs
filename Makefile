@@ -19,6 +19,7 @@ all:
 	cp $(HOME)/dotfiles/configurations/.bashrc $(HOME)/Stuff/files/configs/bashrc/bashrc
 	cp $(HOME)/dotfiles/configurations/.config/alacritty/alacritty.yml $(HOME)/Stuff/files/configs/alacritty/alacritty.yml
 	cp $(HOME)/.config/Code/User/settings.json $(HOME)/Stuff/files/configs/vscode/settings.json
+	cp $(HOME)/dotfiles/configurations/.config/fish/config.fish $(HOME)/Stuff/files/configs/fish/config.fish
 
 delete:
 	rm $(HOME)/Stuff/files/configs/shell-scripts/Makefile
@@ -31,3 +32,4 @@ delete:
 	rm $(HOME)/Stuff/files/configs/nvimrc/nvimrc
 	rm $(HOME)/Stuff/files/configs/bashrc/bashrc
 	rm $(HOME)/Stuff/files/configs/alacritty/alacritty.yml
+	rm $(HOME)/Stuff/files/configs/fish/config.fish
