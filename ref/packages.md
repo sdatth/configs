@@ -29,6 +29,9 @@
 25. pass
 26. fm6000 (https://github.com/anhsirk0/fetch-master-6000)
 27. yadm (https://github.com/TheLocehiliosan/yadm)
+28. terraform
+29. ansible
+30. docker & docker-compose
 
 ### GUI tools
 1. gvim
@@ -98,6 +101,9 @@
 11. vscode
 12. yubico
 13. nodejs
+14. typora
+15. vagrant
+16. terraform
 
 ### snap packages
 1. mailspring

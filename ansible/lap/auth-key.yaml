@@ -1,9 +1,0 @@
----
-- hosts: nodes
-  become: yes
-  tasks:
-  - name: install public keys on nodes
-    ansible.posix.authorized_key:
-      user: vagrant
-      state: present
-      key: "{{ lookup('file', '~/.ssh/ansible_ed.pub') }}"
