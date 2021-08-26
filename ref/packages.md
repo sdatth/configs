@@ -32,6 +32,10 @@
 28. terraform
 29. ansible
 30. docker & docker-compose
+31. kubectl
+32. minikube
+33. docker-credential-pass (https://github.com/docker/docker-credential-helpers)
+34. git-secret (https://github.com/sobolevn/git-secret)
 
 ### GUI tools
 1. gvim

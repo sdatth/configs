@@ -8,7 +8,7 @@
     "python.pythonPath": "/bin/python3",
     "terminal.external.linuxExec": "alacritty",
     "terminal.explorerKind": "external",
-    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.linux": "fish",
     "python.defaultInterpreterPath": "/usr/bin/python3",
     "vim.normalModeKeyBindings": [
         {
@@ -27,7 +27,7 @@
         }
     ],
     "workbench.startupEditor": "none",
-    "editor.fontFamily": "'Hack Nerd Font'",
+    "editor.fontFamily": "'FiraCode Nerd Font'",
     "editor.fontSize": 16,
     "code-runner.executorMap": {
 
