@@ -1,7 +1,7 @@
 # ufw
 
-### - conf file at /etc/default/ufw
-### - need root privileges to execute the commands
+- conf file at /etc/default/ufw
+- need root privileges to execute the commands
 
 <br>
 

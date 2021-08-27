@@ -1,9 +1,9 @@
 # git-secret
 
-## pre-prerequisite
-### - git
-### - gpg
-### - git-secret
+pre-prerequisite
+- git
+- gpg
+- git-secret
 
 <br>
 

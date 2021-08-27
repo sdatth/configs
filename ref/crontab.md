@@ -1,7 +1,7 @@
 # crontab
 
-### - /etc/crontab: system-wide crontab
-### - NOTE : use absolute paths of executables when using a command
+- /etc/crontab: system-wide crontab
+- NOTE : use absolute paths of executables when using a command
 
 <br>
 

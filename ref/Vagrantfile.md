@@ -66,7 +66,7 @@ vagrant snapshot list
 
 <br>
 
-## **_configuration_**
+## configuration
 
 ```
 Vagrant.configure("2") do |config|

@@ -1,6 +1,6 @@
 # tomb
 
-### - installation [https://github.com/dyne/Tomb/blob/master/INSTALL.md]("https://github.com/dyne/Tomb/blob/master/INSTALL.md")
+- installation [https://github.com/dyne/Tomb/blob/master/INSTALL.md]("https://github.com/dyne/Tomb/blob/master/INSTALL.md")
 
 <br>
 

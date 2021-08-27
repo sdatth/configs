@@ -1,5 +1,5 @@
 # macchanger
-### - Note: macchanger package is in the official repo
+- Note: macchanger package is in the official repo
 
 <br>
 

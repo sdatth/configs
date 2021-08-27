@@ -1,6 +1,6 @@
 # ecryptfs
 
-### - ecryptfs-utils package is required 
+- ecryptfs-utils package is required 
 
 <br>
 
