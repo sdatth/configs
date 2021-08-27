@@ -3,7 +3,7 @@
 
 <br>
 
-## **_commands_** 
+## commands 
 ```bash
 # -r flag is used to get a random mac address (specify the interface name to change the approriate one)
 sudo macchanger -r <interface-name>

@@ -1,6 +1,6 @@
 # tmux
 
-## **_commands_**
+## commands
 ```bash
 # list current tmux session
 tmux ls

@@ -1,6 +1,6 @@
 # exiftool
 
-## **_commands_**
+## commands
 ```bash
 # view details of an image
 exiftool -n image.jpg

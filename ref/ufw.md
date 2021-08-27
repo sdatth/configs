@@ -5,7 +5,7 @@
 
 <br>
 
-## **_commands_**
+## commands
 ```bash
 # checks status
 ufw status 

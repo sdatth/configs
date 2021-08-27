@@ -4,7 +4,7 @@
 
 <br>
 
-**_commands_**
+## commands
 ```bash
 # encrypt a folder
 mount -t ecryptfs [source directory] [Destintaion directory] -o [options]

@@ -1,6 +1,6 @@
 # clamav
 
-## **commands**
+## commands
 ```bash
 # update virus signature database
 sudo freshclam

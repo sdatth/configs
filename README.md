@@ -1,1 +1,1 @@
-# configs repo
+# configurations

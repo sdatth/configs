@@ -7,7 +7,7 @@
 
 <br>
 
-## **_commands_**
+## commands
 ```bash
 # prints all the available commands
 git secret usage  

@@ -1,6 +1,6 @@
 # fd
 
-## **_commands_**
+## commands
 ```bash
 
 # help

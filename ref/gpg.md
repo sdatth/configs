@@ -15,7 +15,7 @@
 
 <br> 
 
-## **_commands_**
+## commands
 ```bash
 # generating key
 gpg --full-generate-key

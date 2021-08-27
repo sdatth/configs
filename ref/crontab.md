@@ -5,7 +5,7 @@
 
 <br>
 
-## **_commands_**
+## commands
 ```bash
 # lists all crontab for the current user
 crontab -l

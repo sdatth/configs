@@ -1,6 +1,6 @@
 # Apparmor
 
-## **_commands_**
+## commands
 ```bash
 # Checks status of the service and tells you if it is enabled on boot
 systemctl status apparmor

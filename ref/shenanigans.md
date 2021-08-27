@@ -8,7 +8,7 @@
 
 <br>
 
-## **_commands_**
+## commands
 ```bash
 # ASCII display  
 echo "Hello world" | figlet | lolcat

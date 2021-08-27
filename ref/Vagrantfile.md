@@ -4,7 +4,7 @@
 
 <br>
 
-## **_core commands_** 
+## core commands 
 ```bash
 # power on the vm , it even creates the vm if not found
 vagrant up   

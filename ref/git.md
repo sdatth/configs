@@ -1,6 +1,6 @@
 # git
 
-## **_commands_**
+## commands
 ```bash
 # set basic attributes
 # remove the --global flag to set the attributes to the local repo
