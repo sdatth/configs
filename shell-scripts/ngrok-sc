@@ -1,0 +1,16 @@
+#First run a server on localhost on the required directory
+python -m SimpleHTTPServer 7000
+
+# Second start the ngrok program
+ngrok http 7000
+
+# if we need password auth
+ngrok http -auth="username:password" 7000
+
+# if we want to expose only using https protocol
+ngrok http -auth="username:password" -bind-tls=true 7000 
+
+#if you want ot expose a directory directly
+ngrok http -auth="user:password" -bind-tls=true file:///home/username/Pictures/
+ 
+# note port can be any number
